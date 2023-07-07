@@ -20,13 +20,12 @@ def get_sub_folders(folder, folder_id, message_id):
         print("Message : "+str(message_id));
         if body:
             body_length = len(str(body))
-            print("HTML BODY LENGTH: "+str(body_length));
+            body = body.replace("\n", "<br>").replace("\r", "<br>")
         else:
             body = sub_message.get_plain_text_body()
             body_length = len(str(body))
-            print("TEXT BODY LENGTH: "+str(body_length));
+            body = body.replace("\n", "<br>").replace("\r", "<br>")
         if body_length <= 0:
-            print("Body exists");
             body = sub_message.get_plain_text_body()
 
         folder_name = folder.get_name()
