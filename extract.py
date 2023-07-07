@@ -26,6 +26,8 @@ def get_sub_folders(folder, folder_id, message_id):
             body = body.replace("\n", "<br>").replace("\r", "<br>")
         if body_length <= 0:
             body = sub_message.get_plain_text_body()
+            body = body.replace("\n", "<br>").replace("\r", "<br>")
+
 
         folder_name = folder.get_name()
         message_id += 1
