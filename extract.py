@@ -17,7 +17,6 @@ def get_sub_folders(folder, folder_id, message_id):
         delivered_at = sub_message.get_delivery_time()
         attachment_count = sub_message.get_number_of_attachments()
         body = sub_message.get_html_body()
-        print("Message : "+str(message_id));
         if body:
             body_length = len(str(body))
             body = body.replace("\n", "<br>").replace("\r", "<br>")
